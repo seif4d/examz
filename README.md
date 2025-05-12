@@ -35,7 +35,7 @@ No complex installation is required. Just follow these steps:
     *   Clone this repository or download it as a ZIP file.
 2.  **📂 فتح الملف | Open the File:**
     *   افتح الملف `code (18).html` (أو أي اسم قمت بحفظه به) في متصفح الويب المفضل لديك (مثل Chrome, Firefox, Edge).
-    *   Open the `code (18).html` file (or whatever you named it) in your favorite web browser (e.g., Chrome, Firefox, Edge).
+    *   Open the `index.html` file in your favorite web browser (e.g., Chrome, Firefox, Edge).
 
 وها أنت ذا! سترى جدول الامتحانات.
 That's it! You should see the exam schedule page.
@@ -80,21 +80,6 @@ To modify the exam data (add, remove, or change subjects and dates):
 
 ---
 
-## 🖼️ لقطات شاشة | Screenshots (Preview)
-
-*استبدل هذه الروابط بصور فعلية لواجهة المستخدم!*
-*Replace these placeholders with actual screenshots of the UI!*
-
-*   **(منظر البطاقات - الوضع الفاتح) | Cards View - Light Mode**
-    ![Cards View - Light Mode](placeholder-cards-light.png)
-*   **(منظر البطاقات - الوضع الداكن) | Cards View - Dark Mode**
-    ![Cards View - Dark Mode](placeholder-cards-dark.png)
-*   **(منظر الجدول) | Table View**
-    ![Table View](placeholder-table.png)
-*   **(منظر التقويم) | Calendar View**
-    ![Calendar View](placeholder-calendar.png)
-
----
 
 ## 🤝 المساهمة | Contributing
 
@@ -108,4 +93,4 @@ Contributions are welcome! If you have suggestions for improvements or new featu
 
 هذا المشروع مرخص بموجب ترخيص MIT. انظر ملف `LICENSE` لمزيد من التفاصيل (يمكنك إنشاء ملف LICENSE وإضافة محتوى ترخيص MIT القياسي إليه).
 
-This project is licensed under the MIT License. See the `LICENSE` file for details (You should create a LICENSE file and add the standard MIT license text to it).
+This project is licensed under the MIT License. See the `LICENSE` .
