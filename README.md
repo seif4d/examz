@@ -1,7 +1,7 @@
 # جدول امتحانات كلية علوم الرياضة - جامعة أسيوط (Faculty of Sports Science Exam Schedule Viewer)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
+!(https://seif4d.github.io/examz/)
 هذا المشروع عبارة عن صفحة ويب لعرض جدول امتحانات الفرقة الأولى بكلية علوم الرياضة في جامعة أسيوط. تم تصميمه ليكون سهل الاستخدام، جذاب بصرياً، ومتجاوب مع مختلف أحجام الشاشات.
 
 This project is a web page designed to display the exam schedule for the first year at the Faculty of Sports Science, Assiut University. It aims to be user-friendly, visually appealing, and responsive across different screen sizes.
