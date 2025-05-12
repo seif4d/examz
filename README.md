@@ -5,7 +5,10 @@
 هذا المشروع عبارة عن صفحة ويب لعرض جدول امتحانات الفرقة الأولى بكلية علوم الرياضة في جامعة أسيوط. تم تصميمه ليكون سهل الاستخدام، جذاب بصرياً، ومتجاوب مع مختلف أحجام الشاشات.
 
 This project is a web page designed to display the exam schedule for the first year at the Faculty of Sports Science, Assiut University. It aims to be user-friendly, visually appealing, and responsive across different screen sizes.
+
+
 [شاهد العرض المباشر للجدول هنا](https://seif4d.github.io/examz/)
+
 ---
 
 ## ✨ الميزات الرئيسية | Key Features
