@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جدول امتحانات الفرقة الأولى - كلية علوم الرياضة</title>
+    <style>
+        /* =========== الخطوط =========== */
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
+
+        /* =========== إعدادات عامة ومتغيرات =========== */
+        :root {
+            --primary-color: #0277bd; /* Deep Cerulean Blue */
+            --primary-gradient: linear-gradient(135deg, #01579b 0%, #0288d1 50%, #039be5 100%);
+            --secondary-color: #ff8f00; /* Amber */
+            --light-bg: #f8f9fa; /* Very Light Gray */
+            --dark-bg: #121638; /* Deep Midnight Blue */
+            --card-bg-light: #ffffff;
+            --card-bg-dark: #1e2746; /* Slightly lighter than dark-bg */
+            --success-color: #2e7d32; /* Dark Green */
+            --warning-color: #ff8f00; /* Amber (same as secondary) */
+            --danger-color: #d32f2f; /* Dark Red */
+            --neutral-color: #546e7a; /* Blue Grey */
+            
+            --text-light: #333333;
+            --text-dark: #e0e0e0;
+            --text-muted-light: #666666;
+            --text-muted-dark: #bbbbbb;
+
+            --shadow-light: 0 5px 20px rgba(0, 0, 0, 0.08);
+            --shadow-hover-light: 0 10px 30px rgba(0, 0, 0, 0.12);
+            --shadow-dark: 0 5px 20px rgba(0, 0, 0, 0.25);
+            --shadow-hover-dark: 0 10px 30px rgba(0, 0, 0, 0.35);
+            
+            --border-radius: 12px;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-light);
+            direction: rtl;
+            position: relative;
+            overflow-x: hidden;
+            font-size: 16px;
+            line-height: 1.6;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%230277bd' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+            transition: background-color var(--transition), color var(--transition);
+        }
+
+        /* =========== الديكورات الخلفية =========== */
+        .decoration {
+            position: absolute;
+            z-index: -1;
+            opacity: 0.03; /* Reduced opacity */
+            filter: blur(2px); /* Added blur */
+            transition: var(--transition);
+        }
+
+        .decoration.ball {
+            border-radius: 50%;
+            background: var(--primary-gradient); /* Use gradient */
+        }
+
+        .decoration.one {
+            top: -150px;
+            right: -150px;
+            width: 450px; /* Slightly larger */
+            height: 450px;
+            transform: rotate(-25deg);
+        }
+
+        .decoration.two {
+            bottom: -150px;
+            left: -150px;
+            width: 450px; /* Slightly larger */
+            height: 450px;
+            transform: rotate(25deg);
+        }
+        
+        /* =========== الحاوية الرئيسية =========== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* =========== الترويسة =========== */
+        header {
+            background: var(--primary-gradient);
+            color: white;
+            text-align: center;
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-light);
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        header::before { /* Subtle pattern overlay */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.07' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+            z-index: 0;
+        }
+
+        .university-logo {
+            width: 100px; /* Increased size */
+            height: 100px;
+            background-color: rgba(255, 255, 255, 0.95); /* More opaque */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            border: 5px solid rgba(255, 255, 255, 0.35); /* Thicker border */
+            transition: var(--transition);
+            z-index: 1;
+        }
+
+        .university-logo:hover {
+            transform: scale(1.08) rotate(5deg); /* Added rotation */
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo-text {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 34px; /* Slightly larger */
+            margin-bottom: 15px;
+            position: relative;
+            font-weight: 800;
+            z-index: 1;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+        }
+
+        .subtitle {
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 25px;
+            opacity: 0.9;
+            z-index: 1;
+            position: relative;
+        }
+
+        .motivational {
+            font-style: italic;
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 12px 30px; /* Increased padding */
+            border-radius: 50px;
+            display: inline-block;
+            font-size: 18px;
+            margin-top: 15px;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.25); /* More visible border */
+            transition: var(--transition);
+        }
+
+        .motivational:hover {
+            background-color: rgba(255, 255, 255, 0.25);
+            transform: translateY(-4px) scale(1.03); /* Enhanced hover */
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+        }
+
+        /* =========== أزرار التبديل بين العروض =========== */
+        .view-toggle {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 35px; /* Increased margin */
+            gap: 12px; /* Increased gap */
+        }
+
+        .view-toggle button {
+            background-color: var(--card-bg-light);
+            border: 1px solid rgba(0,0,0,0.1); /* Subtle border */
+            padding: 12px 28px; /* Adjusted padding */
+            cursor: pointer;
+            border-radius: 50px; /* Pill shape */
+            font-size: 16px;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            min-width: 130px; /* Increased min-width */
+            color: var(--text-muted-light);
+        }
+
+        .view-toggle button:hover {
+            background-color: var(--card-bg-light);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(var(--primary-color-rgb), 0.2); /* Use primary color for hover shadow */
+            color: var(--primary-color);
+        }
+
+        .view-toggle button.active {
+            background: var(--primary-gradient);
+            color: white;
+            box-shadow: 0 4px 15px rgba(var(--primary-color-rgb), 0.4); /* Stronger shadow for active */
+            border-color: transparent;
+        }
+        /* Helper for RGBA from primary color */
+        :root { --primary-color-rgb: 2, 119, 189; }
+
+
+        /* =========== بطاقات الامتحانات =========== */
+        .exams-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Wider cards */
+            gap: 30px; /* Increased gap */
+            margin-bottom: 40px;
+        }
+
+        .exam-card {
+            background-color: var(--card-bg-light);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            position: relative;
+            border-top: 7px solid var(--primary-color); /* Thicker border */
+            overflow: hidden;
+        }
+
+        .exam-card::before { /* Subtle gradient overlay */
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 150px; /* Taller */
+            background: linear-gradient(180deg, rgba(var(--primary-color-rgb), 0.05) 0%, transparent 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .exam-card:hover {
+            transform: translateY(-10px) scale(1.02); /* Added scale */
+            box-shadow: var(--shadow-hover-light);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            position: relative;
+            z-index: 1;
+        }
+
+        .date {
+            font-size: 18px;
+            color: var(--text-light);
+            font-weight: 700; /* Bolder */
+            display: flex;
+            align-items: center;
+        }
+
+        .date::before {
+            content: "📅";
+            margin-left: 10px; /* Increased margin */
+            font-size: 18px; /* Larger icon */
+            opacity: 0.8;
+        }
+
+        .time {
+            font-size: 16px;
+            color: var(--text-muted-light);
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .time::before {
+            content: "⏰";
+            margin-left: 8px;
+            font-size: 18px; /* Larger icon */
+            opacity: 0.8;
+        }
+
+        .subject {
+            font-size: 23px; /* Larger */
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .subject-icon {
+            font-size: 26px; /* Larger */
+            margin-left: 15px; /* Increased margin */
+            opacity: 0.9;
+        }
+
+        .details { /* MODIFIED CONTENT APPLIED IN JAVASCRIPT */
+            font-size: 16px;
+            color: var(--text-muted-light);
+            line-height: 1.7; /* Increased line height */
+            margin-bottom: 20px; /* Increased margin */
+            position: relative;
+            z-index: 1;
+            background-color: rgba(var(--primary-color-rgb), 0.04); /* Lighter bg */
+            padding: 12px 18px; /* Increased padding */
+            border-radius: 8px;
+            border-right: 4px solid var(--primary-color); /* Thicker border */
+        }
+
+        .countdown {
+            background-color: rgba(0,0,0,0.025); /* Subtle background */
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 16px;
+            color: var(--text-light);
+            text-align: center;
+            margin-top: 20px; /* Increased margin */
+            font-weight: 600;
+            box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.05);
+            position: relative;
+            z-index: 1;
+            transition: var(--transition);
+        }
+        .countdown:hover {
+            background-color: rgba(var(--primary-color-rgb), 0.05);
+        }
+
+
+        .status {
+            position: absolute;
+            top: 18px; /* Adjusted position */
+            left: 18px;
+            font-size: 13px;
+            padding: 6px 15px; /* Increased padding */
+            border-radius: 30px;
+            color: white;
+            font-weight: 600;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+            z-index: 2;
+            text-transform: uppercase; /* Uppercase text */
+            letter-spacing: 0.5px;
+        }
+
+        .status.upcoming { background-color: var(--primary-color); }
+        .status.urgent { background-color: var(--danger-color); animation: pulse 1.5s infinite; }
+        .status.ready { background-color: var(--success-color); }
+        .status.passed { background-color: var(--neutral-color); opacity: 0.9; }
+
+        @keyframes pulse {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.75; transform: scale(1.05); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        /* =========== عرض الجدول =========== */
+        table {
+            width: 100%;
+            border-collapse: separate; /* Changed for border-spacing */
+            border-spacing: 0;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            margin-bottom: 40px;
+            display: none;
+            transition: var(--transition);
+        }
+
+        table thead {
+            background: var(--primary-gradient);
+            color: white;
+        }
+
+        table th {
+            padding: 18px 20px;
+            text-align: right;
+            font-weight: 700;
+            font-size: 17px; /* Slightly larger */
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        table td {
+            padding: 16px 20px;
+            text-align: right;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            font-size: 16px;
+            vertical-align: middle;
+            color: var(--text-light);
+        }
+        table td .status { font-size: 12px; padding: 4px 10px; }
+
+
+        table tbody tr {
+            background-color: var(--card-bg-light);
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        table tbody tr:hover {
+            background-color: rgba(var(--primary-color-rgb), 0.05);
+        }
+
+        table tbody tr.today {
+            background-color: rgba(var(--primary-color-rgb), 0.1);
+            box-shadow: inset 3px 0 0 0 var(--primary-color); /* Side indicator */
+        }
+        table tbody tr.today td:first-child {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* =========== عرض التقويم =========== */
+        .calendar-view {
+            display: none;
+            background-color: var(--card-bg-light);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow-light);
+            margin-bottom: 40px;
+            transition: var(--transition);
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08); /* Lighter border */
+        }
+
+        .calendar-header h3 {
+            font-size: 24px; /* Larger */
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 12px; /* Increased gap */
+        }
+
+        .calendar-day {
+            padding: 10px;
+            text-align: center;
+            border-radius: 8px;
+            transition: var(--transition);
+            position: relative;
+            min-height: 80px; /* Ensure days have some height */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .calendar-day:not(.day-name):not(:empty):hover {
+            background-color: rgba(var(--primary-color-rgb), 0.05);
+            transform: translateY(-2px);
+        }
+
+        .day-name {
+            margin-bottom: 10px; /* Spacing from numbers */
+            color: var(--text-muted-light);
+            font-weight: 600;
+            padding: 10px;
+            background-color: rgba(var(--primary-color-rgb), 0.03); /* Very subtle bg */
+            border-radius: 8px;
+            font-size: 14px;
+            min-height: auto;
+        }
+
+        .day-number {
+            display: inline-block;
+            width: 38px;
+            height: 38px;
+            line-height: 38px;
+            border-radius: 50%;
+            font-weight: 600; /* Bolder */
+            transition: var(--transition);
+            margin-bottom: 5px;
+            color: var(--text-light);
+        }
+
+        .day-number.has-exam {
+            background-color: var(--primary-color);
+            color: white;
+            box-shadow: 0 3px 8px rgba(var(--primary-color-rgb), 0.4); /* Stronger shadow */
+        }
+
+        .calendar-day.today .day-number { /* Target .today on .calendar-day */
+            background-color: var(--danger-color);
+            color: white;
+            box-shadow: 0 3px 8px rgba(var(--danger-color-rgb), 0.4); /* Use danger color for shadow */
+            animation: pulseRed 2s infinite;
+        }
+        :root { --danger-color-rgb: 211, 47, 47; }
+
+
+        @keyframes pulseRed {
+            0% { transform: scale(1); box-shadow: 0 3px 8px rgba(var(--danger-color-rgb), 0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 5px 15px rgba(var(--danger-color-rgb), 0.6); }
+            100% { transform: scale(1); box-shadow: 0 3px 8px rgba(var(--danger-color-rgb), 0.4); }
+        }
+
+        .exam-indicator {
+            font-size: 11px; /* Smaller */
+            color: var(--primary-color);
+            margin-top: 5px;
+            font-weight: 600;
+            background-color: rgba(var(--primary-color-rgb), 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+
+        /* =========== التذييل =========== */
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: var(--text-muted-light);
+            font-size: 15px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(0, 0, 0, 0.08); /* Lighter border */
+        }
+
+        .footer::before {
+            content: '🏆'; /* Trophy icon */
+            display: block;
+            margin-bottom: 10px;
+            font-size: 28px; /* Larger icon */
+            opacity: 0.7;
+        }
+
+        /* =========== زر تبديل الألوان =========== */
+        .theme-toggle {
+            position: fixed;
+            top: 25px;
+            left: 25px;
+            background-color: var(--card-bg-light);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+            z-index: 1000; /* Ensure it's on top */
+            transition: var(--transition);
+            border: 2px solid rgba(var(--primary-color-rgb), 0.2);
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(360deg) scale(1.1);
+            box-shadow: 0 5px 18px rgba(var(--primary-color-rgb), 0.35); /* Stronger hover shadow */
+        }
+
+        #theme-icon {
+            font-size: 24px; /* Larger icon */
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        /* =========== الوضع الداكن =========== */
+        .dark-mode {
+            background-color: var(--dark-bg);
+            color: var(--text-dark);
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%2342a5f5' fill-opacity='0.02' fill-rule='evenodd'/%3E%3C/svg%3E"); /* Lighter blue dots for dark mode */
+        }
+
+        .dark-mode header {
+            background: linear-gradient(135deg, #002b4f 0%, #0d47a1 50%, #1565c0 100%); /* Darker, richer gradient */
+            box-shadow: var(--shadow-dark);
+        }
+        .dark-mode .university-logo {
+            background-color: rgba(30, 39, 70, 0.9); /* Match card bg */
+            border-color: rgba(66, 165, 245, 0.2); /* Primary color accent */
+        }
+        .dark-mode .logo-text { color: #81d4fa; } /* Light blue text */
+
+        .dark-mode .view-toggle button {
+            background-color: var(--card-bg-dark);
+            color: var(--text-muted-dark);
+            border-color: rgba(255,255,255,0.1);
+        }
+        .dark-mode .view-toggle button:hover {
+            color: #81d4fa; /* Light primary for hover */
+            box-shadow: 0 4px 12px rgba(66, 165, 245, 0.2);
+            background-color: var(--card-bg-dark); /* Keep bg same on hover */
+        }
+        .dark-mode .view-toggle button.active {
+            background: linear-gradient(135deg, #1976d2 0%, #2196f3 100%); /* Active button gradient */
+            color: white;
+            box-shadow: 0 4px 15px rgba(66, 165, 245, 0.3);
+        }
+        
+        .dark-mode .exam-card {
+            background-color: var(--card-bg-dark);
+            border-top-color: #1e88e5; /* Slightly brighter blue for border */
+            box-shadow: var(--shadow-dark);
+        }
+        .dark-mode .exam-card:hover {
+            box-shadow: var(--shadow-hover-dark);
+        }
+        .dark-mode .exam-card::before {
+            background: linear-gradient(180deg, rgba(30, 136, 229, 0.1) 0%, transparent 100%);
+        }
+        .dark-mode .card-header { border-bottom-color: rgba(255, 255, 255, 0.1); }
+        .dark-mode .date { color: var(--text-dark); }
+        .dark-mode .date::before, .dark-mode .time::before { opacity: 1; }
+        .dark-mode .time { color: var(--text-muted-dark); }
+        .dark-mode .subject { color: #64b5f6; } /* Lighter blue for subject */
+        .dark-mode .details {
+            color: var(--text-muted-dark);
+            background-color: rgba(30, 136, 229, 0.07);
+            border-right-color: #1e88e5;
+        }
+        .dark-mode .countdown {
+            background-color: rgba(255,255,255,0.03);
+            color: var(--text-dark);
+            box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.2);
+        }
+        .dark-mode .countdown:hover {
+            background-color: rgba(30, 136, 229, 0.08);
+        }
+
+        .dark-mode table { box-shadow: var(--shadow-dark); }
+        .dark-mode table thead {
+            background: linear-gradient(135deg, #002b4f 0%, #0d47a1 50%, #1565c0 100%);
+        }
+        .dark-mode table td {
+            border-bottom-color: rgba(255, 255, 255, 0.08);
+            color: var(--text-dark);
+        }
+        .dark-mode table tbody tr { background-color: var(--card-bg-dark); }
+        .dark-mode table tbody tr:hover { background-color: rgba(30, 136, 229, 0.07); }
+        .dark-mode table tbody tr.today {
+            background-color: rgba(30, 136, 229, 0.1);
+            box-shadow: inset 3px 0 0 0 #1e88e5;
+        }
+        .dark-mode table tbody tr.today td:first-child { color: #64b5f6; }
+
+
+        .dark-mode .calendar-view {
+            background-color: var(--card-bg-dark);
+            box-shadow: var(--shadow-dark);
+        }
+        .dark-mode .calendar-header { border-bottom-color: rgba(255, 255, 255, 0.1); }
+        .dark-mode .calendar-header h3 { color: #64b5f6; }
+        .dark-mode .day-name {
+            color: var(--text-muted-dark);
+            background-color: rgba(30, 136, 229, 0.05);
+        }
+        .dark-mode .calendar-day:not(.day-name):not(:empty):hover {
+            background-color: rgba(30, 136, 229, 0.07);
+        }
+        .dark-mode .day-number { color: var(--text-dark); }
+        .dark-mode .day-number.has-exam {
+            background-color: #1e88e5;
+            color: white;
+            box-shadow: 0 3px 8px rgba(30, 136, 229, 0.4);
+        }
+        .dark-mode .calendar-day.today .day-number {
+            background-color: var(--danger-color); /* Danger color remains same */
+            color: white;
+            box-shadow: 0 3px 8px rgba(var(--danger-color-rgb),0.5);
+        }
+        .dark-mode .exam-indicator {
+            color: #64b5f6;
+            background-color: rgba(30, 136, 229, 0.15);
+        }
+        
+        .dark-mode .footer {
+            color: var(--text-muted-dark);
+            border-top-color: rgba(255, 255, 255, 0.1);
+        }
+        .dark-mode .theme-toggle {
+            background-color: var(--card-bg-dark);
+            border-color: rgba(66, 165, 245, 0.3);
+            box-shadow: 0 3px 12px rgba(0,0,0, 0.3);
+        }
+        .dark-mode .theme-toggle:hover {
+            box-shadow: 0 5px 18px rgba(66, 165, 245, 0.4);
+        }
+        .dark-mode #theme-icon { color: #64b5f6; }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .exams-container {
+                grid-template-columns: 1fr; /* Single column for cards */
+                gap: 20px;
+            }
+            h1 { font-size: 28px; }
+            .subtitle { font-size: 18px; }
+            .motivational { font-size: 16px; padding: 10px 20px; }
+            
+            .view-toggle { flex-wrap: wrap; } /* Allow buttons to wrap */
+            .view-toggle button { padding: 10px 20px; font-size: 15px; min-width: 100px; }
+
+            .card-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+            .date, .time { font-size: 15px; }
+            .subject { font-size: 20px; }
+            .details { font-size: 14px; }
+
+            table th, table td { padding: 12px 10px; font-size: 14px; }
+            table td .status { font-size: 10px; padding: 3px 8px; }
+            /* For very small screens, table might need horizontal scroll */
+            .table-responsive-wrapper { overflow-x: auto; }
+
+
+            .calendar-grid { gap: 5px; }
+            .calendar-day { padding: 5px; min-height: 60px; }
+            .day-name { font-size: 11px; padding: 6px; margin-bottom: 5px;}
+            .day-number { width: 30px; height: 30px; line-height: 30px; font-size: 13px; }
+            .exam-indicator { font-size: 9px; padding: 2px 4px; }
+            .calendar-header h3 { font-size: 20px; }
+
+            .theme-toggle { width: 45px; height: 45px; top: 15px; left: 15px; }
+            #theme-icon { font-size: 20px; }
+        }
+         @media (max-width: 480px) {
+            .container { padding: 20px 15px; }
+            header { padding: 30px 20px; }
+            .university-logo { width: 80px; height: 80px; border-width: 4px; }
+            .logo-text { font-size: 14px;}
+            h1 { font-size: 24px; }
+            .subtitle { font-size: 16px; }
+
+            .exam-card { padding: 20px; }
+            .subject-icon { font-size: 22px; margin-left: 10px;}
+            .status { top: 12px; left: 12px; font-size: 11px; padding: 5px 10px;}
+         }
+
+    </style>
+</head>
+<body>
+    <div class="decoration ball one"></div>
+    
+    <div class="theme-toggle" onclick="toggleTheme()" title="تبديل المظهر">
+        <span id="theme-icon">🌙</span>
+    </div>
+    
+    <div class="container">
+        <header>
+            <div class="university-logo">
+                <div class="logo-text">جامعة أسيوط</div>
+            </div>
+            <h1>جدول امتحانات الفرقة الأولى</h1>
+            <div class="subtitle">كلية علوم الرياضة - جامعة أسيوط</div>
+            <div class="motivational">
+                كل امتحان هو فرصة لإثبات تميزك وإبداعك! ✨
+            </div>
+        </header>
+        
+        <div class="view-toggle">
+            <button id="btn-cards" class="active" onclick="switchView('cards')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="margin-left: 8px; vertical-align: middle;">
+                    <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z"/>
+                    <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8m0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5M2 5.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0M2 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"/>
+                </svg>
+                بطاقات
+            </button>
+            <button id="btn-table" onclick="switchView('table')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="margin-left: 8px; vertical-align: middle;">
+                    <path d="M.5 4v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V4zM1 13.5V4h1v9.5zM15 4v10a.5.5 0 0 1-.5.5H4a.5.5 0 0 1-.5-.5V4zm-1 9.5V4h-1v9.5z"/>
+                    <path d="M2 2a.5.5 0 0 0-.5.5v1.5a.5.5 0 0 0 .5.5h12a.5.5 0 0 0 .5-.5V2.5a.5.5 0 0 0-.5-.5z"/>
+                </svg>
+                جدول
+            </button>
+            <button id="btn-calendar" onclick="switchView('calendar')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="margin-left: 8px; vertical-align: middle;">
+                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
+                </svg>
+                تقويم
+            </button>
+        </div>
+        
+        <div id="cards-view" class="exams-container">
+            <!-- سيتم ملؤها بالجافا سكريبت -->
+        </div>
+        
+        <div class="table-responsive-wrapper">
+            <table id="table-view">
+                <thead>
+                    <tr>
+                        <th>اليوم والتاريخ</th>
+                        <th>المادة</th>
+                        <th>الوقت</th>
+                        <th>الحالة</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- سيتم ملؤها بالجافا سكريبت -->
+                </tbody>
+            </table>
+        </div>
+        
+        <div id="calendar-view" class="calendar-view">
+            <div class="calendar-header">
+                <h3 id="calendar-month-year">تقويم الامتحانات</h3> 
+            </div>
+            <div class="calendar-grid">
+                <!-- سيتم ملؤها بالجافا سكريبت -->
+            </div>
+        </div>
+        
+        <div class="footer">
+            مع أطيب التمنيات بالتوفيق والنجاح من إدارة كلية علوم الرياضة - جامعة أسيوط &copy; <span id="current-year">2025</span>
+        </div>
+    </div>
+
+    <script>
+        // بيانات الامتحانات (Details field is still here, but ignored in renderCards)
+        const exams = [
+            { date: '2025-05-11', day: 'الأحد', subject: 'الإحصاء التطبيقي', time: '12:30 - 2:30 مساءً', icon: '📊', details: 'قاعة رقم 3 - الدور الثاني' },
+            { date: '2025-05-14', day: 'الأربعاء', subject: 'أساسيات الكرة الطائرة', time: '12:30 - 2:30 مساءً', icon: '🏐', details: 'ملعب الكلية' },
+            { date: '2025-05-17', day: 'السبت', subject: 'فسيولوجيا الإنسان', time: '12:30 - 2:30 مساءً', icon: '❤️‍🩹', details: 'معمل الفسيولوجي' },
+            { date: '2025-05-20', day: 'الثلاثاء', subject: 'أساسيات ألعاب المضرب', time: '12:30 - 2:30 مساءً', icon: '🎾', details: 'ملعب التنس' },
+            { date: '2025-05-24', day: 'السبت', subject: 'مبادئ التدريس', time: '12:30 - 2:30 مساءً', icon: '👩‍🏫', details: 'قاعة رقم 5 - الدور الأول' },
+            { date: '2025-05-04', day: 'الأحد', subject: 'مدخل علم النفس الرياضي', time: '12:30 - 2:30 مساءً', icon: '🧠', details: 'قاعة المحاضرات الكبرى' },
+            { date: '2025-05-06', day: 'الثلاثاء', subject: 'مبادئ علم الحركة', time: '12:30 - 2:30 مساءً', icon: '⚙️', details: 'معمل الميكانيكا الحيوية' },
+            { date: '2025-05-27', day: 'الثلاثاء', subject: 'أساسيات المصارعة والجمباز الإيقاعي', time: '12:30 - 2:30 مساءً', icon: '🤸', details: 'صالة التدريب الرئيسية' }, // Changed icon for better visual
+            { date: '2025-05-31', day: 'السبت', subject: 'أساسيات السياحة', time: '12:30 - 2:30 مساءً', icon: '🌍', details: 'قاعة رقم 2 - الدور الثاني' },
+            { date: '2025-06-02', day: 'الاثنين', subject: 'حقوق الإنسان', time: '12:30 - 2:30 مساءً', icon: '⚖️', details: 'قاعة المؤتمرات' }
+        ];
+
+        // ترتيب الامتحانات حسب التاريخ
+        exams.sort((a, b) => new Date(a.date) - new Date(b.date));
+        
+        const today = new Date();
+        today.setHours(0, 0, 0, 0); // Normalize today's date
+
+        // الدالة الرئيسية للتحميل
+        function init() {
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Determine the month/year for calendar header from the first exam
+            if (exams.length > 0) {
+                const firstExamDate = new Date(exams[0].date);
+                const monthYearString = firstExamDate.toLocaleDateString('ar-EG', { month: 'long', year: 'numeric' });
+                document.getElementById('calendar-month-year').textContent = `تقويم الامتحانات - ${monthYearString}`;
+            }
+
+
+            renderCards();
+            renderTable();
+            renderCalendar(); // This will now use the month of the first exam
+            updateCountdowns();
+            setInterval(updateCountdowns, 60000); // تحديث العد التنازلي كل دقيقة
+
+            // Set initial theme based on user preference or system
+            if (localStorage.getItem('theme') === 'dark' || 
+                (localStorage.getItem('theme') === null && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.body.classList.add('dark-mode');
+                document.getElementById('theme-icon').textContent = '☀️';
+            } else {
+                document.getElementById('theme-icon').textContent = '🌙';
+            }
+        }
+
+        function getExamStatus(examDateStr) {
+            const examDate = new Date(examDateStr);
+            examDate.setHours(0, 0, 0, 0); // Normalize exam date
+            
+            const daysUntil = Math.floor((examDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
+            
+            let statusText = '';
+            let statusClass = '';
+
+            if (daysUntil < 0) {
+                statusText = 'انتهى';
+                statusClass = 'passed';
+            } else if (daysUntil === 0) {
+                statusText = 'اليوم!';
+                statusClass = 'urgent';
+            } else if (daysUntil <= 3) {
+                statusText = 'قريب'; // Urgent for 3 days or less
+                statusClass = 'urgent';
+            } else if (daysUntil <= 7) {
+                statusText = 'استعد'; // Ready for 7 days or less
+                statusClass = 'ready';
+            } else {
+                statusText = 'قادم';
+                statusClass = 'upcoming';
+            }
+            return { text: statusText, class: statusClass, daysUntil };
+        }
+
+
+        // عرض البطاقات
+        function renderCards() {
+            const container = document.getElementById('cards-view');
+            container.innerHTML = '';
+            
+            exams.forEach(exam => {
+                const examDateObj = new Date(exam.date);
+                const statusInfo = getExamStatus(exam.date);
+                
+                const card = document.createElement('div');
+                card.className = 'exam-card';
+                
+                const dateStr = examDateObj.toLocaleDateString('ar-EG', { day: 'numeric', month: 'long' }); // Full month name
+                
+                // *** MODIFIED LINE BELOW ***
+                card.innerHTML = `
+                    <div class="status ${statusInfo.class}">${statusInfo.text}</div>
+                    <div class="card-header">
+                        <div class="date">${exam.day}, ${dateStr}</div>
+                        <div class="time">${exam.time}</div>
+                    </div>
+                    <div class="subject">
+                        <span class="subject-icon">${exam.icon}</span>
+                        ${exam.subject}
+                    </div>
+                    <div class="details">صالات هندسة</div> 
+                    ${statusInfo.daysUntil >=0 ? `<div class="countdown" data-date="${exam.date}"></div>` : '<div class="countdown" style="color: var(--neutral-color);">انتهى الامتحان</div>'}
+                `;
+                // *** END OF MODIFIED LINE ***
+                
+                container.appendChild(card);
+            });
+        }
+
+        // عرض الجدول
+        function renderTable() {
+            const tbody = document.querySelector('#table-view tbody');
+            tbody.innerHTML = '';
+            
+            exams.forEach(exam => {
+                const examDateObj = new Date(exam.date);
+                const statusInfo = getExamStatus(exam.date);
+                const dateStr = examDateObj.toLocaleDateString('ar-EG', { day: 'numeric', month: 'long' }); // Full month name
+                
+                const tr = document.createElement('tr');
+                if (statusInfo.daysUntil === 0) {
+                    tr.className = 'today';
+                }
+                
+                tr.innerHTML = `
+                    <td>${exam.day}, ${dateStr}</td>
+                    <td><span class="subject-icon" style="font-size: 1.2em; vertical-align: middle;">${exam.icon}</span> ${exam.subject}</td>
+                    <td>${exam.time}</td>
+                    <td><span class="status ${statusInfo.class}">${statusInfo.text}</span></td>
+                `;
+                
+                tbody.appendChild(tr);
+            });
+        }
+
+        // عرض التقويم
+        function renderCalendar() {
+            const calendarGrid = document.querySelector('.calendar-grid');
+            calendarGrid.innerHTML = '';
+            
+            const daysOfWeek = ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
+            daysOfWeek.forEach(day => {
+                const dayEl = document.createElement('div');
+                dayEl.className = 'calendar-day day-name';
+                dayEl.textContent = day;
+                calendarGrid.appendChild(dayEl);
+            });
+            
+            // Use the month and year of the first exam, or current month if no exams
+            let displayYear, displayMonth;
+            if (exams.length > 0) {
+                const firstExamDate = new Date(exams[0].date);
+                displayYear = firstExamDate.getFullYear();
+                displayMonth = firstExamDate.getMonth(); // 0-indexed
+            } else {
+                const now = new Date();
+                displayYear = now.getFullYear();
+                displayMonth = now.getMonth();
+            }
+
+            const firstDayOfMonth = new Date(displayYear, displayMonth, 1);
+            const startingDay = firstDayOfMonth.getDay(); // 0 for Sunday, 1 for Monday, ...
+            const daysInMonth = new Date(displayYear, displayMonth + 1, 0).getDate();
+
+            const examDatesInMonth = exams
+                .map(exam => new Date(exam.date))
+                .filter(date => date.getFullYear() === displayYear && date.getMonth() === displayMonth)
+                .map(date => date.getDate());
+
+            for (let i = 0; i < startingDay; i++) {
+                calendarGrid.appendChild(document.createElement('div')).className = 'calendar-day';
+            }
+
+            const currentActualDate = new Date();
+            const todayDay = currentActualDate.getDate();
+            const todayMonth = currentActualDate.getMonth();
+            const todayYear = currentActualDate.getFullYear();
+
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayCell = document.createElement('div');
+                dayCell.className = 'calendar-day';
+                
+                const dayNumberSpan = document.createElement('span');
+                dayNumberSpan.className = 'day-number';
+                dayNumberSpan.textContent = day;
+
+                if (day === todayDay && displayMonth === todayMonth && displayYear === todayYear) {
+                    dayCell.classList.add('today'); // Add 'today' to the parent cell
+                }
+
+                if (examDatesInMonth.includes(day)) {
+                    dayNumberSpan.classList.add('has-exam');
+                    const indicator = document.createElement('div');
+                    indicator.className = 'exam-indicator';
+                    indicator.textContent = 'امتحان';
+                    dayCell.appendChild(dayNumberSpan);
+                    dayCell.appendChild(indicator);
+                } else {
+                    dayCell.appendChild(dayNumberSpan);
+                }
+                calendarGrid.appendChild(dayCell);
+            }
+        }
+
+
+        // تحديث العد التنازلي
+        function updateCountdowns() {
+            const countdowns = document.querySelectorAll('.countdown');
+            const now = new Date();
+            
+            countdowns.forEach(countdown => {
+                if (!countdown.dataset.date) return; // Skip if already marked as ended
+
+                const examDate = new Date(countdown.dataset.date);
+                // Assume exams start at 12:30 PM on their day.
+                // You might want to parse exam.time for more accuracy if times vary significantly.
+                const examDateTime = new Date(examDate.getFullYear(), examDate.getMonth(), examDate.getDate(), 12, 30, 0);
+                
+                const diff = examDateTime - now;
+                
+                if (diff < 0) {
+                    countdown.textContent = 'انتهى الامتحان';
+                    countdown.style.color = 'var(--neutral-color)'; // Use CSS var for color
+                } else {
+                    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                    
+                    let countdownText = 'متبقي: ';
+                    if (days > 0) {
+                        countdownText += `${days} يوم ${hours} س`;
+                    } else if (hours > 0) {
+                        countdownText += `${hours} س ${minutes} د`;
+                    } else if (minutes > 0) {
+                        countdownText += `${minutes} دقيقة`;
+                    } else {
+                        countdownText = "الوقت الآن!"; // Or very close
+                    }
+                    countdown.textContent = countdownText;
+                    
+                    // Reset color, in case it was changed to urgent
+                    countdown.style.color = ''; 
+                    if (days === 0 && hours < 6) { // Example: highlight if less than 6 hours left on the exam day
+                         countdown.style.color = 'var(--danger-color)';
+                    }
+                }
+            });
+        }
+
+        // تبديل طريقة العرض
+        function switchView(view) {
+            document.getElementById('cards-view').style.display = 'none';
+            document.getElementById('table-view').style.display = 'none';
+            document.getElementById('calendar-view').style.display = 'none';
+            
+            document.querySelectorAll('.view-toggle button').forEach(btn => btn.classList.remove('active'));
+            
+            if (view === 'cards') {
+                document.getElementById('cards-view').style.display = 'grid';
+                document.getElementById('btn-cards').classList.add('active');
+            } else if (view === 'table') {
+                document.getElementById('table-view').style.display = 'table';
+                document.getElementById('btn-table').classList.add('active');
+            } else if (view === 'calendar') {
+                document.getElementById('calendar-view').style.display = 'block';
+                document.getElementById('btn-calendar').classList.add('active');
+            }
+        }
+
+        // تبديل وضع الألوان
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById('theme-icon');
+            
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                themeIcon.textContent = '☀️';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeIcon.textContent = '🌙';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // تحميل الصفحة
+        window.onload = init;
+    </script>
+</body>
+</html>
